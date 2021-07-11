@@ -19,12 +19,13 @@ foreach($arr_css as $key => $str) {
         $str = str_replace($fontUrl,$base64,$str);
     }
 
-    $value = $str . "}";
+    $value = $str . ( ($key < (count($arr_css)-1) ) ? "}" : "");
+
     $output .= $value;
 }
 
 ?>
-<textarea type="text" name="content" style="width:100%;height:100%;"><?php echo $output; ?></textarea>
+<textarea type="text" name="content" style="width:80%;height:80%;"><?php echo $output; ?></textarea>
 <br><a href="google-fonts.php">Back</a>
 <?php } else { ?>
 <form method="POST">
